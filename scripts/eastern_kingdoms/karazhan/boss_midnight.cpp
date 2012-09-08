@@ -217,7 +217,7 @@ struct MANGOS_DLL_DECL boss_attumenAI : public ScriptedAI
 
     void SpellHit(Unit* pSource, const SpellEntry* pSpell)
     {
-        if (pSpell->Mechanic == MECHANIC_DISARM)
+        if (pSpell->GetMechanic() == MECHANIC_DISARM)
             DoScriptText(SAY_DISARMED, m_creature);
     }
 

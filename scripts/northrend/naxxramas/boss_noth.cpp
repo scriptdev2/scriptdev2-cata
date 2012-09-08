@@ -154,8 +154,14 @@ struct MANGOS_DLL_DECL boss_nothAI : public ScriptedAI
 
     void SpellHit(Unit* pCaster, const SpellEntry* pSpell)
     {
-        if (pCaster == m_creature && pSpell->Effect[EFFECT_INDEX_0] == SPELL_EFFECT_LEAP)
-            DoCastSpellIfCan(m_creature, m_bIsRegularMode ? SPELL_CRIPPLE : SPELL_CRIPPLE_H);
+        if (pCaster != m_creature)
+            return;
+
+        if (SpellEffectEntry const* pSpellEffect = pSpell->GetSpellEffect(EFFECT_INDEX_0))
+        {
+            if (pSpellEffect->Effect == SPELL_EFFECT_LEAP)
+                DoCastSpellIfCan(m_creature, m_bIsRegularMode ? SPELL_CRIPPLE : SPELL_CRIPPLE_H);
+        }
     }
 
     void UpdateAI(const uint32 uiDiff)

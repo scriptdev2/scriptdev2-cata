@@ -118,7 +118,7 @@ struct MANGOS_DLL_DECL npc_kyle_the_frenziedAI : public ScriptedAI
                             {
                                 const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_LUNCH);
 
-                                uint32 uiGameobjectEntry = pSpell->EffectMiscValue[EFFECT_INDEX_1];
+                                uint32 uiGameobjectEntry = pSpell->GetEffectMiscValue(EFFECT_INDEX_1);
 
                                 pGo = GetClosestGameObjectWithEntry(pPlayer, uiGameobjectEntry, 2*INTERACTION_DISTANCE);
                             }

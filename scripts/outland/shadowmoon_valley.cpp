@@ -355,7 +355,7 @@ struct MANGOS_DLL_DECL npc_dragonmaw_peonAI : public ScriptedAI
                     {
                         const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SERVING_MUTTON);
 
-                        uint32 uiGameobjectEntry = pSpell->EffectMiscValue[EFFECT_INDEX_0];
+                        uint32 uiGameobjectEntry = pSpell->GetEffectMiscValue(EFFECT_INDEX_0);
 
                         // this can fail, but very low chance
                         pMutton = GetClosestGameObjectWithEntry(pPlayer, uiGameobjectEntry, 2*INTERACTION_DISTANCE);
