@@ -444,6 +444,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\scripts\eastern_kingdoms\gilneas.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\eastern_kingdoms\gilneas_city.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\scripts\eastern_kingdoms\hinterlands.cpp"
 					>
 				</File>
@@ -492,7 +500,15 @@
 					>
 				</File>
 				<File
+					RelativePath="..\scripts\eastern_kingdoms\twilight_highlands.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\scripts\eastern_kingdoms\undercity.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\eastern_kingdoms\vashjir.cpp"
 					>
 				</File>
 				<File
@@ -508,112 +524,272 @@
 					>
 				</File>
 				<Filter
-					Name="blackrock_depths"
+					Name="bastion_of_twilight"
 					>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\blackrock_depths.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\ascendant_council.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\blackrock_depths.h"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\bastion_of_twilight.h"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\boss_ambassador_flamelash.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_chogall.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\boss_coren_direbrew.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_halfus_wyrmbreaker.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\boss_emperor_dagran_thaurissan.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_sinestra.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\boss_general_angerforge.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_valiona_and_theralion.cpp"
 						>
 					</File>
 					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\boss_high_interrogator_gerstahn.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_depths\instance_blackrock_depths.cpp"
+						RelativePath="..\scripts\eastern_kingdoms\bastion_of_twilight\instance_bastion_of_twilight.cpp"
 						>
 					</File>
 				</Filter>
 				<Filter
-					Name="blackrock_spire"
+					Name="blackrock_mountain"
 					>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_spire\blackrock_spire.h"
+					<Filter
+						Name="blackrock_caverns"
 						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_spire\boss_gyth.cpp"
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\blackrock_caverns.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\boss_beauty.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\boss_corla.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\boss_karsh_steelbender.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\boss_lord_obsidius.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\boss_romogg.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\instance_blackrock_caverns.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="blackrock_depths"
 						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_spire\boss_overlord_wyrmthalak.cpp"
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\blackrock_depths.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\blackrock_depths.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\boss_ambassador_flamelash.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\boss_coren_direbrew.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\boss_emperor_dagran_thaurissan.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\boss_general_angerforge.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\boss_high_interrogator_gerstahn.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\instance_blackrock_depths.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="blackrock_spire"
 						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_spire\boss_pyroguard_emberseer.cpp"
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_spire\boss_gyth.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_spire\boss_overlord_wyrmthalak.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_spire\boss_pyroguard_emberseer.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_spire\instance_blackrock_spire.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_spire\blackrock_spire.h"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="blackwing_descent"
 						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackrock_spire\instance_blackrock_spire.cpp"
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\blackwing_descent.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\boss_atramedes.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\boss_chimaeron.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\boss_magmaw.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\boss_maloriak.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\boss_nefarian_descent.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\instance_blackwing_descent.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_descent\omnotron_defense.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="blackwing_lair"
 						>
-					</File>
-				</Filter>
-				<Filter
-					Name="blackwing_lair"
-					>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\blackwing_lair.h"
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\blackwing_lair.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_broodlord_lashlayer.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_chromaggus.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_ebonroc.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_firemaw.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_flamegor.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_nefarian.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_razorgore.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_vaelastrasz.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\boss_victor_nefarius.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\blackwing_lair\instance_blackwing_lair.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="molten_core"
 						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_broodlord_lashlayer.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_chromaggus.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_ebonroc.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_firemaw.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_flamegor.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_nefarian.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_razorgore.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_vaelastrasz.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\boss_victor_nefarius.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\blackwing_lair\instance_blackwing_lair.cpp"
-						>
-					</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_baron_geddon.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_garr.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_gehennas.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_golemagg.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_lucifron.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_magmadar.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_majordomo_executus.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_ragnaros.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_shazzrah.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\boss_sulfuron_harbinger.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\instance_molten_core.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\molten_core.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\molten_core.h"
+							>
+						</File>
+					</Filter>
 				</Filter>
 				<Filter
 					Name="deadmines"
@@ -652,6 +828,34 @@
 					</File>
 					<File
 						RelativePath="..\scripts\eastern_kingdoms\gnomeregan\instance_gnomeregan.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="grim_batol"
+					>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\boss_drahga_shadowburner.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\boss_erudax.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\boss_forgemaster_throngus.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\boss_general_umbriss.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\grim_batol.h"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\grim_batol\instance_grim_batol.cpp"
 						>
 					</File>
 				</Filter>
@@ -744,62 +948,6 @@
 					</File>
 					<File
 						RelativePath="..\scripts\eastern_kingdoms\magisters_terrace\magisters_terrace.h"
-						>
-					</File>
-				</Filter>
-				<Filter
-					Name="molten_core"
-					>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_baron_geddon.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_garr.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_gehennas.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_golemagg.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_lucifron.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_magmadar.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_majordomo_executus.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_ragnaros.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_shazzrah.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\boss_sulfuron_harbinger.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\instance_molten_core.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\molten_core.cpp"
-						>
-					</File>
-					<File
-						RelativePath="..\scripts\eastern_kingdoms\molten_core\molten_core.h"
 						>
 					</File>
 				</Filter>
@@ -968,6 +1116,34 @@
 					</File>
 					<File
 						RelativePath="..\scripts\eastern_kingdoms\sunwell_plateau\sunwell_plateau.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="throne_of_the_tides"
+					>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\boss_commander_ulthok.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\boss_erunak_and_ghursha.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\boss_lady_nazjar.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\boss_ozumat.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\instance_throne_of_the_tides.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\eastern_kingdoms\throne_of_the_tides\throne_of_the_tides.h"
 						>
 					</File>
 				</Filter>
@@ -1152,7 +1328,15 @@
 					>
 				</File>
 				<File
+					RelativePath="..\scripts\kalimdor\molten_front.cpp"
+					>
+				</File>
+				<File
 					RelativePath="..\scripts\kalimdor\moonglade.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\kalimdor\mount_hyjal.cpp"
 					>
 				</File>
 				<File
@@ -1189,6 +1373,10 @@
 				</File>
 				<File
 					RelativePath="..\scripts\kalimdor\thunder_bluff.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\kalimdor\uldum.cpp"
 					>
 				</File>
 				<File
@@ -1259,30 +1447,114 @@
 						</File>
 					</Filter>
 					<Filter
-						Name="hyjal"
+						Name="dragon_soul"
 						>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\boss_archimonde.cpp"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_deathwing.cpp"
 							>
 						</File>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\hyjal.cpp"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_hagara.cpp"
 							>
 						</File>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\hyjal.h"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_morchok.cpp"
 							>
 						</File>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\hyjalAI.cpp"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_ultraxion.cpp"
 							>
 						</File>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\hyjalAI.h"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_warlord_zonozz.cpp"
 							>
 						</File>
 						<File
-							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal\instance_hyjal.cpp"
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_warmaster_blackhorn.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\boss_yorsahj.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\dragon_soul.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\dragon_soul.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\dragon_soul\instance_dragon_soul.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="end_of_time"
+						>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\end_of_time\end_of_time.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\end_of_time\end_of_time.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\end_of_time\instance_end_of_time.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="hour_of_twilight"
+						>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hour_of_twilight\boss_archbishop_benedictus.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hour_of_twilight\boss_arcurion.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hour_of_twilight\boss_asira_dawnslayer.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hour_of_twilight\hour_of_twilight.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hour_of_twilight\instance_hour_of_twilight.cpp"
+							>
+						</File>
+					</Filter>
+					<Filter
+						Name="hyjal_summit"
+						>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\boss_archimonde.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\hyjal.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\hyjal.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\hyjalAI.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\hyjalAI.h"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\hyjal_summit\instance_hyjal.cpp"
 							>
 						</File>
 					</Filter>
@@ -1302,6 +1574,30 @@
 							>
 						</File>
 					</Filter>
+					<Filter
+						Name="well_of_eternity"
+						>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\well_of_eternity\boss_mannoroth_and_varothen.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\well_of_eternity\boss_perotharn.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\well_of_eternity\boss_queen_azshara.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\well_of_eternity\instance_well_of_eternity.cpp"
+							>
+						</File>
+						<File
+							RelativePath="..\scripts\kalimdor\caverns_of_time\well_of_eternity\well_of_eternity.h"
+							>
+						</File>
+					</Filter>
 				</Filter>
 				<Filter
 					Name="dire_maul"
@@ -1316,6 +1612,74 @@
 					</File>
 					<File
 						RelativePath="..\scripts\kalimdor\dire_maul\instance_dire_maul.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="firelands"
+					>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_alysrazor.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_baleroc.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_bethtilac.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_lord_rhyolith.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_majordomo_staghelm.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_ragnaros_firelands.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\boss_shannox.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\firelands.h"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\firelands\instance_firelands.cpp"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="lost_city_of_tolvir"
+					>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\boss_general_husam.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\boss_lockmaw.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\boss_prophet_barim.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\boss_siamat.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\instance_lost_city_of_tolvir.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\lost_city_of_tolvir\lost_city_of_tolvir.h"
 						>
 					</File>
 				</Filter>
@@ -1464,6 +1828,50 @@
 					</File>
 				</Filter>
 				<Filter
+					Name="throne_of_the_four_winds"
+					>
+					<File
+						RelativePath="..\scripts\kalimdor\throne_of_the_four_winds\boss_alakir.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\throne_of_the_four_winds\conclave_of_the_wind.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\throne_of_the_four_winds\instance_throne_of_the_four_winds.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\throne_of_the_four_winds\throne_of_the_four_winds.h"
+						>
+					</File>
+				</Filter>
+				<Filter
+					Name="vortex_pinnacle"
+					>
+					<File
+						RelativePath="..\scripts\kalimdor\vortex_pinnacle\boss_altairus.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\vortex_pinnacle\boss_asaad.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\vortex_pinnacle\boss_grand_vizier_ertan.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\vortex_pinnacle\instance_vortex_pinnacle.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\kalimdor\vortex_pinnacle\vortex_pinnacle.h"
+						>
+					</File>
+				</Filter>
+				<Filter
 					Name="wailing_caverns"
 					>
 					<File
@@ -1496,6 +1904,50 @@
 					</File>
 					<File
 						RelativePath="..\scripts\kalimdor\zulfarrak\zulfarrak.h"
+						>
+					</File>
+				</Filter>
+			</Filter>
+			<Filter
+				Name="maelstrom"
+				>
+				<File
+					RelativePath="..\scripts\maelstrom\deepholm.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\maelstrom\kezan.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\scripts\maelstrom\lost_isles.cpp"
+					>
+				</File>
+				<Filter
+					Name="stonecore"
+					>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\boss_corborus.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\boss_ozruk.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\boss_priestess_azil.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\boss_slabhide.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\instance_stonecore.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\scripts\maelstrom\stonecore\stonecore.h"
 						>
 					</File>
 				</Filter>
