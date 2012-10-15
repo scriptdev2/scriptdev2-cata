@@ -228,7 +228,7 @@ bool EquippedOk(Player* pPlayer, uint32 spellId)
     {
         SpellEffectEntry const* pSpellEffect = spell->GetSpellEffect(SpellEffectIndex(i));
         if(!pSpellEffect)
-            return false;
+            continue;
 
         uint32 reqSpell = pSpellEffect->EffectTriggerSpell;;
         if (!reqSpell)
