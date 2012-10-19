@@ -605,6 +605,7 @@
     </ClCompile>
     <ClCompile Include="..\scripts\eastern_kingdoms\blackrock_mountain\molten_core\molten_core.cpp">
       <Filter>scripts\eastern_kingdoms\blackrock_mountain\molten_core</Filter>
+    </ClCompile>
     <ClCompile Include="..\scripts\eastern_kingdoms\deadmines\boss_mr_smite.cpp">
       <Filter>scripts\eastern_kingdoms\deadmines</Filter>
     </ClCompile>
@@ -1030,6 +1031,7 @@
      </ClCompile>
     <ClCompile Include="..\scripts\kalimdor\caverns_of_time\hyjal_summit\instance_hyjal.cpp">
       <Filter>scripts\kalimdor\caverns_of_time\hyjal_summit</Filter>
+    </ClCompile>
     <ClCompile Include="..\scripts\kalimdor\caverns_of_time\old_hillsbrad\instance_old_hillsbrad.cpp">
       <Filter>scripts\kalimdor\caverns_of_time\old_hillsbrad</Filter>
     </ClCompile>
