@@ -319,6 +319,14 @@ UPDATE creature_template SET ScriptName='npc_enslaved_soul' WHERE entry=23469;
 UPDATE instance_template SET ScriptName='instance_blackfathom_deeps' WHERE map=48;
 UPDATE gameobject_template SET ScriptName='go_fire_of_akumai' WHERE entry IN (21118,21119,21120,21121);
 
+/* BLACKROCK CAVERNS */
+UPDATE instance_template SET ScriptName='instance_blackrock_caverns' WHERE map=645;
+UPDATE creature_template SET ScriptName='boss_romogg' WHERE entry=39665;
+UPDATE creature_template SET ScriptName='boss_corla' WHERE entry=39679;
+UPDATE creature_template SET ScriptName='boss_karsh_steelbender' WHERE entry=39698;
+UPDATE creature_template SET ScriptName='boss_beauty' WHERE entry=39700;
+UPDATE creature_template SET ScriptName='boss_lord_obsidius' WHERE entry=39705;
+
 /* BLACKROCK DEPTHS */
 DELETE FROM scripted_areatrigger WHERE entry=1526;
 INSERT INTO scripted_areatrigger VALUES (1526,'at_ring_of_law');

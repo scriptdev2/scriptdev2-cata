@@ -16,13 +16,77 @@
 
 /* ScriptData
 SDName: boss_beauty
-SD%Complete: 0
+SD%Complete: 10
 SDComment: Placeholder
 SDCategory: Blackrock Caverns
 EndScriptData */
 
 #include "precompiled.h"
+#include "blackrock_caverns.h"
+
+enum
+{
+    // ToDo: add spells and yells here
+};
+
+struct MANGOS_DLL_DECL boss_beautyAI : public ScriptedAI
+{
+    boss_beautyAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
+        m_bIsRegularMode = pCreature->GetMap()->IsRegularDifficulty();
+        Reset();
+    }
+
+    ScriptedInstance* m_pInstance;
+    bool m_bIsRegularMode;
+
+    void Reset()
+    {
+    }
+
+    void Aggro(Unit* pWho)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_BEAUTY, IN_PROGRESS);
+    }
+
+    void JustDied(Unit* pKiller)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_BEAUTY, DONE);
+    }
+
+    void KilledUnit(Unit* pVictim)
+    {
+    }
+
+    void JustReachedHome()
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_BEAUTY, FAIL);
+    }
+
+    void UpdateAI(const uint32 uiDiff)
+    {
+        if (!m_creature->SelectHostileTarget() || !m_creature->getVictim())
+            return;
+
+        DoMeleeAttackIfReady();
+    }
+};
+
+CreatureAI* GetAI_boss_beauty(Creature* pCreature)
+{
+    return new boss_beautyAI(pCreature);
+}
 
 void AddSC_boss_beauty()
 {
+    Script* pNewScript;
+
+    pNewScript = new Script;
+    pNewScript->Name = "boss_beauty";
+    pNewScript->GetAI = &GetAI_boss_beauty;
+    pNewScript->RegisterSelf();
 }

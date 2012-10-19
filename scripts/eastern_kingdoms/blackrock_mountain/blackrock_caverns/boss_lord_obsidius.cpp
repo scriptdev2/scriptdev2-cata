@@ -16,13 +16,77 @@
 
 /* ScriptData
 SDName: boss_lord_obsidius
-SD%Complete: 0
+SD%Complete: 10
 SDComment: Placeholder
 SDCategory: Blackrock Caverns
 EndScriptData */
 
 #include "precompiled.h"
+#include "blackrock_caverns.h"
+
+enum
+{
+    // ToDo: add spells and yells here
+};
+
+struct MANGOS_DLL_DECL boss_lord_obsidiusAI : public ScriptedAI
+{
+    boss_lord_obsidiusAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
+        m_bIsRegularMode = pCreature->GetMap()->IsRegularDifficulty();
+        Reset();
+    }
+
+    ScriptedInstance* m_pInstance;
+    bool m_bIsRegularMode;
+
+    void Reset()
+    {
+    }
+
+    void Aggro(Unit* pWho)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_OBSIDIUS, IN_PROGRESS);
+    }
+
+    void JustDied(Unit* pKiller)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_OBSIDIUS, DONE);
+    }
+
+    void KilledUnit(Unit* pVictim)
+    {
+    }
+
+    void JustReachedHome()
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_OBSIDIUS, FAIL);
+    }
+
+    void UpdateAI(const uint32 uiDiff)
+    {
+        if (!m_creature->SelectHostileTarget() || !m_creature->getVictim())
+            return;
+
+        DoMeleeAttackIfReady();
+    }
+};
+
+CreatureAI* GetAI_boss_lord_obsidius(Creature* pCreature)
+{
+    return new boss_lord_obsidiusAI(pCreature);
+}
 
 void AddSC_boss_lord_obsidius()
 {
+    Script* pNewScript;
+
+    pNewScript = new Script;
+    pNewScript->Name = "boss_lord_obsidius";
+    pNewScript->GetAI = &GetAI_boss_lord_obsidius;
+    pNewScript->RegisterSelf();
 }

@@ -16,13 +16,77 @@
 
 /* ScriptData
 SDName: boss_karsh_steelbender
-SD%Complete: 0
+SD%Complete: 10
 SDComment: Placeholder
 SDCategory: Blackrock Caverns
 EndScriptData */
 
 #include "precompiled.h"
+#include "blackrock_caverns.h"
+
+enum
+{
+    // ToDo: add spells and yells here
+};
+
+struct MANGOS_DLL_DECL boss_karsh_steelbenderAI : public ScriptedAI
+{
+    boss_karsh_steelbenderAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        m_pInstance = (ScriptedInstance*)pCreature->GetInstanceData();
+        m_bIsRegularMode = pCreature->GetMap()->IsRegularDifficulty();
+        Reset();
+    }
+
+    ScriptedInstance* m_pInstance;
+    bool m_bIsRegularMode;
+
+    void Reset()
+    {
+    }
+
+    void Aggro(Unit* pWho)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_KARSH, IN_PROGRESS);
+    }
+
+    void JustDied(Unit* pKiller)
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_KARSH, DONE);
+    }
+
+    void KilledUnit(Unit* pVictim)
+    {
+    }
+
+    void JustReachedHome()
+    {
+        if (m_pInstance)
+            m_pInstance->SetData(TYPE_KARSH, FAIL);
+    }
+
+    void UpdateAI(const uint32 uiDiff)
+    {
+        if (!m_creature->SelectHostileTarget() || !m_creature->getVictim())
+            return;
+
+        DoMeleeAttackIfReady();
+    }
+};
+
+CreatureAI* GetAI_boss_karsh_steelbender(Creature* pCreature)
+{
+    return new boss_karsh_steelbenderAI(pCreature);
+}
 
 void AddSC_boss_karsh_steelbender()
 {
+    Script* pNewScript;
+
+    pNewScript = new Script;
+    pNewScript->Name = "boss_karsh_steelbender";
+    pNewScript->GetAI = &GetAI_boss_karsh_steelbender;
+    pNewScript->RegisterSelf();
 }
