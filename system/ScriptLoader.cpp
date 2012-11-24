@@ -26,6 +26,7 @@ extern void AddSC_npc_professions();
 extern void AddSC_npcs_special();
 extern void AddSC_spell_scripts();
 extern void AddSC_world_map_scripts();
+extern void AddSC_world_map_ebon_hold();
 
 // eastern kingdoms
 extern void AddSC_ascendant_council();                      // bastion_of_twilight
@@ -555,6 +556,7 @@ void AddScripts()
     AddSC_npcs_special();
     AddSC_spell_scripts();
     AddSC_world_map_scripts();
+    AddSC_world_map_ebon_hold();
 
     // eastern kingdoms
     AddSC_ascendant_council();                              // bastion_of_twilight
