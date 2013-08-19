@@ -671,7 +671,7 @@ struct MANGOS_DLL_DECL npc_king_llaneAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HEROISM);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -685,7 +685,7 @@ struct MANGOS_DLL_DECL npc_king_llaneAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SWEEP);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -777,7 +777,7 @@ struct MANGOS_DLL_DECL npc_warchief_blackhandAI : public npc_chess_piece_generic
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_BLOODLUST);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -791,7 +791,7 @@ struct MANGOS_DLL_DECL npc_warchief_blackhandAI : public npc_chess_piece_generic
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_CLEAVE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -853,7 +853,7 @@ struct MANGOS_DLL_DECL npc_human_conjurerAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_ELEMENTAL_BLAST);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -867,7 +867,7 @@ struct MANGOS_DLL_DECL npc_human_conjurerAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_RAIN_OF_FIRE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -929,7 +929,7 @@ struct MANGOS_DLL_DECL npc_orc_warlockAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_FIREBALL);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -943,7 +943,7 @@ struct MANGOS_DLL_DECL npc_orc_warlockAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_POISON_CLOUD_ACTION);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1019,7 +1019,7 @@ struct MANGOS_DLL_DECL npc_human_footmanAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HEROIC_BLOW);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1033,7 +1033,7 @@ struct MANGOS_DLL_DECL npc_human_footmanAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SHIELD_BLOCK);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1109,7 +1109,7 @@ struct MANGOS_DLL_DECL npc_orc_gruntAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_VICIOUS_STRIKE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1123,7 +1123,7 @@ struct MANGOS_DLL_DECL npc_orc_gruntAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_WEAPON_DEFLECTION);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1185,7 +1185,7 @@ struct MANGOS_DLL_DECL npc_water_elementalAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_GEYSER);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1199,7 +1199,7 @@ struct MANGOS_DLL_DECL npc_water_elementalAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_WATER_SHIELD);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1261,7 +1261,7 @@ struct MANGOS_DLL_DECL npc_summoned_daemonAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HELLFIRE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1275,7 +1275,7 @@ struct MANGOS_DLL_DECL npc_summoned_daemonAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_FIRE_SHIELD);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1337,7 +1337,7 @@ struct MANGOS_DLL_DECL npc_human_chargerAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SMASH);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1351,7 +1351,7 @@ struct MANGOS_DLL_DECL npc_human_chargerAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_STOMP);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1413,7 +1413,7 @@ struct MANGOS_DLL_DECL npc_orc_wolfAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_BITE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1427,7 +1427,7 @@ struct MANGOS_DLL_DECL npc_orc_wolfAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HOWL);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1489,7 +1489,7 @@ struct MANGOS_DLL_DECL npc_human_clericAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HEALING);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1503,7 +1503,7 @@ struct MANGOS_DLL_DECL npc_human_clericAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_HOLY_LANCE);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1565,7 +1565,7 @@ struct MANGOS_DLL_DECL npc_orc_necrolyteAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SHADOW_MEND_ACTION);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
@@ -1579,7 +1579,7 @@ struct MANGOS_DLL_DECL npc_orc_necrolyteAI : public npc_chess_piece_genericAI
 
             // reset timer based on spell values
             const SpellEntry* pSpell = GetSpellStore()->LookupEntry(SPELL_SHADOW_SPEAR);
-            return pSpell->RecoveryTime ? pSpell->RecoveryTime : pSpell->CategoryRecoveryTime;
+            return pSpell->GetRecoveryTime() ? pSpell->GetRecoveryTime() : pSpell->GetCategoryRecoveryTime();
         }
 
         return 5000;
