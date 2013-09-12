@@ -1039,6 +1039,12 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000961,'I am gathering a bogbean. It takes some time.',0,0,0,69,'stinky ignatz SAY_STINKY_GATHERING'),
 (-1000962,'Thanks you for help.',0,0,0,0,'stinky ignatz SAY_STINKY_END');
 
+-- -1 004 000 GENERAL MAPS - CATACLYSM (not instance maps)
+INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
+(-1004000,'Yipe! Help Hogger!',0,1,0,0,'hogger SAY_CALL_HELP'),
+(-1004001,'Hogger is eating! Stop him!',0,5,0,0,'hogger WHISPER_EATING'),
+(-1004002,'No hurt Hogger!',0,1,0,0,'hogger SAY_HOGGER_BEATEN');
+
 -- -1 033 000 SHADOWFANG KEEP
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
 (-1033000,'Follow me and I\'ll open the courtyard door for you.',0,0,7,1,'prisoner ashcrombe SAY_FREE_AS'),

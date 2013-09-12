@@ -560,6 +560,7 @@ UPDATE creature_template SET ScriptName='npc_lich_king_light_dawn' WHERE entry=2
 UPDATE creature_template SET ScriptName='npc_acherus_deathcharger' WHERE entry=28782;
 
 /* ELWYNN FOREST */
+UPDATE creature_template SET ScriptName='npc_hogger' WHERE entry=448;
 
 /* EVERSONG WOODS */
 UPDATE creature_template SET ScriptName='npc_kelerun_bloodmourn' WHERE entry=17807;
