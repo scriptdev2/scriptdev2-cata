@@ -2401,7 +2401,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 
 (-1554020,'We are on a strict timetable. You will not interfere!',11193,1,0,0,'pathaleon SAY_AGGRO'),
 (-1554021,'I\'m looking for a team player...',11197,1,0,0,'pathaleon SAY_DOMINATION_1'),
-(-1554022,'You work for me now!',11198,1,0,0,'pathaleon SAY_DOMINATION_2'),
+(-1554022,'You work for me now!',0,1,0,0,'pathaleon SAY_DOMINATION_2'),
 (-1554023,'Time to supplement my work force.',11196,1,0,0,'pathaleon SAY_SUMMON'),
 (-1554024,'I prefeer to be hands-on...',11199,1,0,0,'pathaleon SAY_ENRAGE'),
 (-1554025,'A minor inconvenience.',11194,1,0,0,'pathaleon SAY_SLAY_1'),
@@ -4525,7 +4525,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1999903,'These mortal infedels my lord, they have invaded your sanctum and seek to steal your secrets.',8041,1,0,0,'example_creature SAY_RANDOM_2'),
 (-1999904,'You are already dead.',8581,1,0,0,'example_creature SAY_RANDOM_3'),
 (-1999905,'Where to go? What to do? So many choices that all end in pain, end in death.',8791,1,0,0,'example_creature SAY_RANDOM_4'),
-(-1999906,'$N, I sentance you to death!',8588,1,0,0,'example_creature SAY_BESERK'),
+(-1999906,'$N, I sentance you to death!',0,1,0,0,'example_creature SAY_BESERK'),
 (-1999907,'The suffering has just begun!',0,1,0,0,'example_creature SAY_PHASE'),
 (-1999908,'I always thought I was a good dancer.',0,0,0,0,'example_creature SAY_DANCE'),
 (-1999909,'Move out Soldier!',0,0,0,0,'example_creature SAY_SALUTE'),
