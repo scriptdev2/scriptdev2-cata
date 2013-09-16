@@ -40,8 +40,10 @@ enum
     SPELL_EATING            = 87351,
     SPELL_SUMMON_MINIONS    = 87366,
     SPELL_VICIOUS_SLICE     = 87337,
+    SPELL_BLOODY_STRIKE     = 87359,
 
     NPC_MINION_OF_HOOGER    = 46932,
+    NPC_GENERAL_BUNNY       = 45979,
 };
 
 struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
@@ -50,13 +52,17 @@ struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
 
     uint32 m_uiViciousSliceTimer;
     uint32 m_uiEatingEndTimer;
+    uint32 m_uiBloodyStrikeTimer;
     bool m_bHasSpawnedMinions;
     bool m_bEncounterFinished;
+
+    ObjectGuid m_bunnyGuid;
 
     void Reset() override
     {
         m_uiViciousSliceTimer = urand(15000, 20000);
         m_uiEatingEndTimer    = 0;
+        m_uiBloodyStrikeTimer = 1000;
         m_bHasSpawnedMinions  = false;
         m_bEncounterFinished  = false;
     }
@@ -144,7 +150,14 @@ struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
                 DoScriptText(WHISPER_EATING, m_creature, pDealer);
 
                 SetCombatMovement(false);
-                m_creature->GetMotionMaster()->MovePoint(1, -10144.47f, 668.8424f, 36.90841f);
+                if (Creature* pBunny = GetClosestCreatureWithEntry(m_creature, NPC_GENERAL_BUNNY, 25.0f))
+                {
+                    float fX, fY, fZ;
+                    pBunny->GetContactPoint(m_creature, fX, fY, fZ);
+                    m_creature->GetMotionMaster()->MovePoint(1, fX, fY, fZ);
+                    m_bunnyGuid = pBunny->GetObjectGuid();
+                }
+
                 m_bHasSpawnedMinions = true;
             }
         }
@@ -154,14 +167,6 @@ struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
     {
         if (!m_creature->SelectHostileTarget() || !m_creature->getVictim())
             return;
-
-        if (m_uiViciousSliceTimer < uiDiff)
-        {
-            if (DoCastSpellIfCan(m_creature->getVictim(), SPELL_VICIOUS_SLICE) == CAST_OK)
-                m_uiViciousSliceTimer = urand(15000, 20000);
-        }
-        else
-            m_uiViciousSliceTimer -= uiDiff;
 
         // resume combat after eat
         if (m_uiEatingEndTimer)
@@ -174,7 +179,28 @@ struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
             }
             else
                 m_uiEatingEndTimer -= uiDiff;
+
+            if (m_uiBloodyStrikeTimer < uiDiff)
+            {
+                if (Creature* pTarget = m_creature->GetMap()->GetCreature(m_bunnyGuid))
+                {
+                    if (DoCastSpellIfCan(pTarget, SPELL_BLOODY_STRIKE) == CAST_OK)
+                        m_uiBloodyStrikeTimer = 2000;
+                }
+            }
+            else
+                m_uiBloodyStrikeTimer -= uiDiff;
+
+            return;
         }
+
+        if (m_uiViciousSliceTimer < uiDiff)
+        {
+            if (DoCastSpellIfCan(m_creature->getVictim(), SPELL_VICIOUS_SLICE) == CAST_OK)
+                m_uiViciousSliceTimer = urand(15000, 20000);
+        }
+        else
+            m_uiViciousSliceTimer -= uiDiff;
 
         DoMeleeAttackIfReady();
     }
