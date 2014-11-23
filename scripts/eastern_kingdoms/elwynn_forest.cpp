@@ -46,7 +46,7 @@ enum
     NPC_GENERAL_BUNNY       = 45979,
 };
 
-struct MANGOS_DLL_DECL npc_hoggerAI : public ScriptedAI
+struct npc_hoggerAI : public ScriptedAI
 {
     npc_hoggerAI(Creature* pCreature) : ScriptedAI(pCreature) { Reset(); }
 

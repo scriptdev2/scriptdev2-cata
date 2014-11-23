@@ -22,7 +22,7 @@ enum
     NPC_OBSIDIUS                = 39705,
 };
 
-class MANGOS_DLL_DECL instance_blackrock_caverns : public ScriptedInstance
+class instance_blackrock_caverns : public ScriptedInstance
 {
     public:
         instance_blackrock_caverns(Map* pMap);

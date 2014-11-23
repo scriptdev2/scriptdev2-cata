@@ -29,7 +29,7 @@ enum
     // ToDo: add spells and yells here
 };
 
-struct MANGOS_DLL_DECL boss_corlaAI : public ScriptedAI
+struct boss_corlaAI : public ScriptedAI
 {
     boss_corlaAI(Creature* pCreature) : ScriptedAI(pCreature)
     {
