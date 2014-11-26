@@ -127,6 +127,10 @@ struct boss_hodirAI : public ScriptedAI
 
     void Aggro(Unit* /*pWho*/) override
     {
+	    // don't attack again after being defeated
+        if (m_bEventFinished)
+            return;
+						
         if (m_pInstance)
         {
             m_pInstance->SetData(TYPE_HODIR, IN_PROGRESS);

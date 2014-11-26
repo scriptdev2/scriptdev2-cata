@@ -242,6 +242,10 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
 
     void Aggro(Unit* /*pWho*/) override
     {
+	    // don't attack again after being defeated
+        if (m_bEventFinished)
+            return;
+			
         if (m_pInstance)
         {
             // start the counter at the first aggro
