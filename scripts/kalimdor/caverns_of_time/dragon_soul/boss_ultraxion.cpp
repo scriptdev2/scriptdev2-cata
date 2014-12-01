@@ -22,7 +22,18 @@ SDCategory: Dragon Soul
 EndScriptData */
 
 #include "precompiled.h"
+#include "dragon_soul.h"
 
-void AddSC_boss_ultraxion()
+
+/*######
+## boss_ultraxion
+######*/
+
+struct boss_ultraxionAI : public ScriptedAI
 {
-}
+    boss_dragon_soulAI(Creature* pCreature) : ScriptedAI(pCreature)
+    {
+        m_pInstance = (instance_dragon_soul*)pCreature->GetInstanceData();
+        Reset();
+    }
+
