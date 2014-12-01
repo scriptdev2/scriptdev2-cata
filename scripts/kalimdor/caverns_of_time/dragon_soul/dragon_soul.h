@@ -28,8 +28,8 @@ enum
 	NPC_KALECGOS                    = 56664,
 	NPC_NOZDORMU                    = 56666,
 
-    // Spells used to Ultraxion evade
-    SPELL_TWILIGHT_ERUPTION         = 106388,
+    // Spells used to Ultraxion death and evade, need instance or boss Ultraxion script for cast spell, because spell has TARGET_SELF.
+    SPELL_ULTRAXION_AURA_CANCELLED  = 109281,
 };
 
 // spawn location for Ultraxion in reload case

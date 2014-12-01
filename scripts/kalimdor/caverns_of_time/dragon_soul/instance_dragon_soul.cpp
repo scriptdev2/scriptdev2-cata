@@ -75,9 +75,14 @@ void instance_dragon_soul::OnCreatureCreate(Creature* pCreature)
 
 void instance_dragon_soul::OnCreatureEvade(Creature* pCreature)
 {
-    // Reset encounter if need.
+        if (pCreature->GetEntry() == NPC_ULTRAXION)
+        SetData(TYPE_ULTRAXION, FAIL);
 }
 
+void instance_dragon_soul::OnCreatureDeath(Creature* pCreature)
+{
+    // Reset encounter if need.
+}
 void instance_dragon_soul::SetData(uint32 uiType, uint32 uiData)
 
 {
@@ -165,4 +170,6 @@ void instance_dragon_soul::Load(const char* in)
     }
 
     OUT_LOAD_INST_DATA_COMPLETE;
-}		    
+
+}
+		    
