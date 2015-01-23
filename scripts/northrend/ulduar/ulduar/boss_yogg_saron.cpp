@@ -1329,6 +1329,14 @@ struct npc_immortal_guardianAI : public ScriptedAI
         m_uiDrainLifeTimer = 10000;
         m_bWeakened = false;
     }
+    
+    void AttackStart(Unit* pWho) override
+    {
+        if (pWho->GetEntry() == NPC_THORIM_HELPER)
+            return;
+
+        ScriptedAI::AttackStart(pWho);
+    }
 
     void DamageTaken(Unit* pDealer, uint32& uiDamage) override
     {
