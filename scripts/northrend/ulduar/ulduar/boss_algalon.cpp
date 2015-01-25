@@ -250,8 +250,9 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
                 m_pInstance->DoUpdateWorldState(WORLD_STATE_TIMER, 1);
                 m_pInstance->SetData(TYPE_ALGALON_TIMER, 60);
             }
-
-            m_pInstance->SetData(TYPE_ALGALON, IN_PROGRESS);
+            // don't allow set instance data, if Algalon Data = DONE.
+            if (m_pInstance->GetData(TYPE_ALGALON) != DONE)
+                m_pInstance->SetData(TYPE_ALGALON, IN_PROGRESS);
         }
 
         DoCastSpellIfCan(m_creature, SPELL_SUPERMASSIVE_FAIL, CAST_TRIGGERED);
@@ -405,8 +406,8 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
                 EnterEvadeMode();
                 break;
             case SPELL_TELEPORT:
-                // despawn when time has run out
-                DoCastSpellIfCan(m_creature, SPELL_TELEPORT, CAST_TRIGGERED);
+                // despawn when time has run out. Delete flag CAST_TRIGGERED(no need that flag)
+                DoCastSpellIfCan(m_creature, SPELL_TELEPORT);
                 m_creature->ForcedDespawn(2000);
                 break;
             case NPC_ALGALON:
@@ -431,11 +432,11 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
         }
     }
 
-    // function to start the intro part on first spawn
+    // function to start the intro part on first spawn. SPELL_ARRIVAL don't need flag CAST_TRIGGERED(working fine)
     void DoStartIntroEvent()
     {
         m_creature->SetLevitate(true);
-        DoCastSpellIfCan(m_creature, SPELL_ARRIVAL, CAST_TRIGGERED);
+        DoCastSpellIfCan(m_creature, SPELL_ARRIVAL);
         DoCastSpellIfCan(m_creature, SPELL_RIDE_LIGHTNING, CAST_TRIGGERED);
         m_creature->GetMotionMaster()->MovePoint(1, afAlgalonMovePos[0], afAlgalonMovePos[1], afAlgalonMovePos[2]);
     }
