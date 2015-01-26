@@ -274,6 +274,9 @@ UPDATE creature_template SET ScriptName='npc_magwin' WHERE entry=17312;
 
 /* BADLANDS */
 
+/* BARADIN HOLD */
+UPDATE instance_template SET ScriptName='instance_baradin_hold' WHERE map=757;
+
 /* BARRENS */
 UPDATE creature_template SET ScriptName='npc_beaten_corpse' WHERE entry=10668;
 UPDATE creature_template SET ScriptName='npc_gilthares' WHERE entry=3465;

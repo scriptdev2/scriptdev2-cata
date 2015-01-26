@@ -29,6 +29,7 @@ extern void AddSC_world_map_scripts();
 extern void AddSC_world_map_ebon_hold();
 
 // eastern kingdoms
+extern void AddSC_instance_baradin_hold();                  // baradin_hold
 extern void AddSC_ascendant_council();                      // bastion_of_twilight
 extern void AddSC_boss_chogall();
 extern void AddSC_boss_halfus_wyrmbreaker();
@@ -561,6 +562,7 @@ void AddScripts()
     AddSC_world_map_ebon_hold();
 
     // eastern kingdoms
+    AddSC_instance_baradin_hold();                          // baradin_hold
     AddSC_ascendant_council();                              // bastion_of_twilight
     AddSC_boss_chogall();
     AddSC_boss_halfus_wyrmbreaker();

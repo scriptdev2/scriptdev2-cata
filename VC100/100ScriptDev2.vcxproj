@@ -246,6 +246,7 @@
     <ClCompile Include="..\scripts\eastern_kingdoms\western_plaguelands.cpp" />
     <ClCompile Include="..\scripts\eastern_kingdoms\westfall.cpp" />
     <ClCompile Include="..\scripts\eastern_kingdoms\wetlands.cpp" />
+    <ClCompile Include="..\scripts\eastern_kingdoms\baradin_hold\instance_baradin_hold.cpp" />
     <ClCompile Include="..\scripts\eastern_kingdoms\bastion_of_twilight\ascendant_council.cpp" />
     <ClCompile Include="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_chogall.cpp" />
     <ClCompile Include="..\scripts\eastern_kingdoms\bastion_of_twilight\boss_halfus_wyrmbreaker.cpp" />
@@ -762,6 +763,7 @@
     <ClInclude Include="..\base\follower_ai.h" />
     <ClInclude Include="..\base\guard_ai.h" />
     <ClInclude Include="..\base\pet_ai.h" />
+    <ClInclude Include="..\scripts\eastern_kingdoms\baradin_hold\baradin_hold.h" />
     <ClInclude Include="..\scripts\eastern_kingdoms\bastion_of_twilight\bastion_of_twilight.h" />
     <ClInclude Include="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_caverns\blackrock_caverns.h" />
     <ClInclude Include="..\scripts\eastern_kingdoms\blackrock_mountain\blackrock_depths\blackrock_depths.h" />

@@ -16,15 +16,15 @@
 
 /* ScriptData
 SDName: instance_baradin_hold
-SD%Complete: 0
-SDComment: GO Support
+SD%Complete: 20
+SDComment: Basic door support
 SDCategory: Baradin Hold
 EndScriptData */
 
 #include "precompiled.h"
 #include "baradin_hold.h"
 
-instance_baradin_hold::instance_baradin_hold(Map* pMap) : ScriptedInstance(pMap),
+instance_baradin_hold::instance_baradin_hold(Map* pMap) : ScriptedInstance(pMap)
 {
     Initialize();
 }
@@ -34,18 +34,27 @@ void instance_baradin_hold::Initialize()
     memset(&m_auiEncounter, 0, sizeof(m_auiEncounter));
 }
 
+bool instance_baradin_hold::IsEncounterInProgress() const
+{
+    for (uint8 i = 0; i < MAX_ENCOUNTER; ++i)
+    {
+        if (m_auiEncounter[i] == IN_PROGRESS)
+            return true;
+    }
+
+    return false;
+}
 
 void instance_baradin_hold::OnCreatureCreate(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
-    {    
+    {
         case NPC_ARGALOTH:
         case NPC_OCCUTAR:
         case NPC_ALIZABAL:
             m_mNpcEntryGuidStore[pCreature->GetEntry()] = pCreature->GetObjectGuid();
             break;
     }
-        
 }
 
 void instance_baradin_hold::OnObjectCreate(GameObject* pGo)
@@ -58,15 +67,14 @@ void instance_baradin_hold::OnObjectCreate(GameObject* pGo)
             m_mGoEntryGuidStore[pGo->GetEntry()] = pGo->GetObjectGuid();
             break;
     }
-
 }
 
 void instance_baradin_hold::OnCreatureDeath(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, DONE); break;
-        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR, DONE);    break;
+        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, DONE);   break;
+        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR,  DONE);   break;
         case NPC_ALIZABAL:   SetData(TYPE_ALIZABAL, DONE);   break;
     }
 }
@@ -75,8 +83,8 @@ void instance_baradin_hold::OnCreatureEvade(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, FAIL); break;
-        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR, FAIL);    break;
+        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, FAIL);   break;
+        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR,  FAIL);   break;
         case NPC_ALIZABAL:   SetData(TYPE_ALIZABAL, FAIL);   break;
     }
 }
@@ -85,8 +93,8 @@ void instance_baradin_hold::OnCreatureEnterCombat(Creature* pCreature)
 {
     switch (pCreature->GetEntry())
     {
-        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, IN_PROGRESS); break;
-        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR, IN_PROGRESS);    break;
+        case NPC_ARGALOTH:   SetData(TYPE_ARGALOTH, IN_PROGRESS);   break;
+        case NPC_OCCUTAR:    SetData(TYPE_OCCUTAR,  IN_PROGRESS);   break;
         case NPC_ALIZABAL:   SetData(TYPE_ALIZABAL, IN_PROGRESS);   break;
     }
 }
@@ -98,26 +106,15 @@ void instance_baradin_hold::SetData(uint32 uiType, uint32 uiData)
         case TYPE_ARGALOTH:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_ARGALOTH_DOOR);
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_ARGALOTH_DOOR);
-
-            m_auiEncounter[uiType] = uiData;
             break;
-        
         case TYPE_OCCUTAR:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_OCCUTAR_DOOR);
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_OCCUTAR_DOOR);
             break;
-        
         case TYPE_ALIZABAL:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_ALIZABAL_DOOR);
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_ALIZABAL_DOOR);
             break;
-        
     }
 
     if (uiData == DONE)
@@ -164,7 +161,6 @@ void instance_baradin_hold::Load(const char* chrIn)
     OUT_LOAD_INST_DATA_COMPLETE;
 }
 
-
 InstanceData* GetInstanceData_instance_baradin_hold(Map* pMap)
 {
     return new instance_baradin_hold(pMap);
@@ -179,6 +175,3 @@ void AddSC_instance_baradin_hold()
     pNewScript->GetInstanceData = &GetInstanceData_instance_baradin_hold;
     pNewScript->RegisterSelf();
 }
-
-
-

@@ -13,8 +13,8 @@ enum
     TYPE_OCCUTAR                = 1,
     TYPE_ALIZABAL               = 2,
 
-    NPC_ARGALOTH                = 47120,
-    NPC_OCCUTAR                 = 52363,   //all bosses scripted in EventAI.
+    NPC_ARGALOTH                = 47120,                    // all bosses scripted in EventAI.
+    NPC_OCCUTAR                 = 52363,
     NPC_ALIZABAL                = 55869,
 
     GO_ARGALOTH_DOOR            = 207619,
@@ -28,7 +28,7 @@ class instance_baradin_hold : public ScriptedInstance
         instance_baradin_hold(Map* pMap);
 
         void Initialize() override;
-
+        bool IsEncounterInProgress() const override;
 
         void OnCreatureCreate(Creature* pCreature) override;
         void OnObjectCreate(GameObject* pGo) override;
@@ -43,11 +43,9 @@ class instance_baradin_hold : public ScriptedInstance
         const char* Save() const override { return m_strInstData.c_str(); }
         void Load(const char* chrIn) override;
 
-
     private:
         uint32 m_auiEncounter[MAX_ENCOUNTER];
         std::string m_strInstData;
-
 };
 
 #endif

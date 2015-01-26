@@ -16,6 +16,9 @@
     <Filter Include="scripts\eastern_kingdoms">
       <UniqueIdentifier>{ca2551e0-68d0-4331-88f3-ab0cdaa2bf9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="scripts\eastern_kingdoms\baradin_hold">
+      <UniqueIdentifier>{58d62e97-6f71-4345-b536-90fd7a7b815c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="scripts\eastern_kingdoms\bastion_of_twilight">
       <UniqueIdentifier>{043f49c3-d844-4833-b5bc-bf88638c47b5}</UniqueIdentifier>
     </Filter>
@@ -449,6 +452,9 @@
     </ClCompile>
     <ClCompile Include="..\scripts\eastern_kingdoms\wetlands.cpp">
       <Filter>scripts\eastern_kingdoms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scripts\eastern_kingdoms\baradin_hold\instance_baradin_hold.cpp">
+      <Filter>scripts\eastern_kingdoms\baradin_hold</Filter>
     </ClCompile>
     <ClCompile Include="..\scripts\eastern_kingdoms\bastion_of_twilight\ascendant_council.cpp">
       <Filter>scripts\eastern_kingdoms\bastion_of_twilight</Filter>
@@ -1970,6 +1976,9 @@
     </ClInclude>
     <ClInclude Include="..\base\pet_ai.h">
       <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\scripts\eastern_kingdoms\baradin_hold\baradin_hold.h">
+      <Filter>scripts\eastern_kingdoms\baradin_hold</Filter>
     </ClInclude>
     <ClInclude Include="..\scripts\eastern_kingdoms\bastion_of_twilight\bastion_of_twilight.h">
       <Filter>scripts\eastern_kingdoms\bastion_of_twilight</Filter>
