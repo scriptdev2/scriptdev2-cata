@@ -38,6 +38,10 @@ enum
     NPC_KALECGOS                = 25319,            // related to kiljaeden event
     NPC_VELEN                   = 26246,
     NPC_LIADRIN                 = 26247,
+    NPC_BERSERKER               = 25798,
+    NPC_FURY_MAGE               = 25799,
+    NPC_DARK_FIEND              = 25744,
+    NPC_VOID_SENTINEL           = 25772,
 
     GO_FORCEFIELD               = 188421,           // kalecgos door + collisions
     GO_BOSS_COLLISION_1         = 188523,
@@ -151,5 +155,6 @@ class instance_sunwell_plateau : public ScriptedInstance, private DialogueHelper
         GuidList m_lAllFlightTriggersList;
         GuidList m_lBackdoorTriggersList;
         GuidList m_lDeceiversGuidList;
+        GuidList m_lMuruslaveGuidList;
 };
 #endif

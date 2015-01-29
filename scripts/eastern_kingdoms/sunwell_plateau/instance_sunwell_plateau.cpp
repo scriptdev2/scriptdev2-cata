@@ -125,6 +125,13 @@ void instance_sunwell_plateau::OnCreatureCreate(Creature* pCreature)
             if (pCreature->GetPositionY() < 523.0f)
                 m_lBackdoorTriggersList.push_back(pCreature->GetObjectGuid());
             break;
+            // Need, because creature_linking_template. does not support this feature. In terms of what they have to go to the NPC despawned not only if Muru evade, but else if Entropius die.
+        case NPC_BERSERKER:
+        case NPC_FURY_MAGE:
+        case NPC_DARK_FIEND:
+        case NPC_VOID_SENTINEL:
+            m_lMuruslaveGuidList.push_back(pCreature->GetObjectGuid());
+            break;
     }
 }
 
@@ -231,6 +238,18 @@ void instance_sunwell_plateau::SetData(uint32 uiType, uint32 uiData)
             DoUseDoorOrButton(GO_MURU_ENTER_GATE);
             if (uiData == DONE)
                 DoUseDoorOrButton(GO_MURU_EXIT_GATE);
+            {
+                // Despawn Minion
+                for (GuidList::const_iterator itr = m_lMuruslaveGuidList.begin(); itr != m_lMuruslaveGuidList.end(); ++itr)
+                {
+                    if (Creature* pMuruslave = instance->GetCreature(*itr))
+                    {
+                        if (pMuruslave->isAlive())
+                            pMuruslave->ForcedDespawn();
+                    }
+                }
+            }
+            break;
             else if (uiData == IN_PROGRESS)
                 m_uiMuruBerserkTimer = 10 * MINUTE * IN_MILLISECONDS;
             break;
