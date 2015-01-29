@@ -236,7 +236,7 @@ void instance_sunwell_plateau::SetData(uint32 uiType, uint32 uiData)
             m_auiEncounter[uiType] = uiData;
             // combat door
             DoUseDoorOrButton(GO_MURU_ENTER_GATE);
-            if (uiData == DONE)
+            if (uiData == FAIL || uiData == DONE)
                 DoUseDoorOrButton(GO_MURU_EXIT_GATE);
             {
                 // Despawn Minion
