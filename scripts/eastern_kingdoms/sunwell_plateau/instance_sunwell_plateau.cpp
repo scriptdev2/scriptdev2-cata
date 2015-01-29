@@ -236,8 +236,21 @@ void instance_sunwell_plateau::SetData(uint32 uiType, uint32 uiData)
             m_auiEncounter[uiType] = uiData;
             // combat door
             DoUseDoorOrButton(GO_MURU_ENTER_GATE);
-            if (uiData == FAIL || uiData == DONE)
+            if (uiData == DONE)
                 DoUseDoorOrButton(GO_MURU_EXIT_GATE);
+            {
+                // Despawn Minion
+                for (GuidList::const_iterator itr = m_lMuruslaveGuidList.begin(); itr != m_lMuruslaveGuidList.end(); ++itr)
+                {
+                    if (Creature* pMuruslave = instance->GetCreature(*itr))
+                    {
+                        if (pMuruslave->isAlive())
+                            pMuruslave->ForcedDespawn();
+                    }
+                }
+            }
+            break;
+            else if (uiData == FAIL)
             {
                 // Despawn Minion
                 for (GuidList::const_iterator itr = m_lMuruslaveGuidList.begin(); itr != m_lMuruslaveGuidList.end(); ++itr)
