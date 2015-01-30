@@ -59,7 +59,12 @@ enum
     NPC_PUDDLE_STALKER              = 37013,        // related to Festergut and Rotface
     NPC_RIMEFANG                    = 37533,
     NPC_SPINESTALKER                = 37534,
-
+    NPC_DARKFALLEN_ADVISOR          = 37571,    
+    NPC_DARKFALLEN_BLOOD_KNIGHT     = 37595,
+    NPC_DARKFALLEN_NOBLE            = 37663,
+    NPC_DARKFALLEN_ARCHMAGE         = 37664,
+    
+    
     // GameObjects entries
     GO_ICEWALL_1                    = 201911,
     GO_ICEWALL_2                    = 201910,
@@ -250,6 +255,7 @@ class instance_icecrown_citadel : public ScriptedInstance, private DialogueHelpe
         bool m_bHasSpinestalkerLanded;
 
         GuidList m_lDeathwhisperStalkersGuids;
+        GuidSet m_sCrimsonHallNpcGuidSet;
 };
 
 #endif
