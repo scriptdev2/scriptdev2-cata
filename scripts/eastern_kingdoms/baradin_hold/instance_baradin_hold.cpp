@@ -106,50 +106,26 @@ void instance_baradin_hold::SetData(uint32 uiType, uint32 uiData)
         case TYPE_ARGALOTH:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_ARGALOTH_DOOR);
-            if (uiData == DONE || uiData == FAIL)
-            {
-            // remove encounter frames
+
+            // add / remove encounter frames
             if (Creature* pArgaloth = GetSingleCreatureFromStorage(NPC_ARGALOTH))
-                SendEncounterFrame(ENCOUNTER_FRAME_DISENGAGE, pArgaloth->GetObjectGuid());
-            }
-            else if (uiData == IN_PROGRESS)
-            {
-                // add encounter frames
-                if (Creature* pArgaloth = GetSingleCreatureFromStorage(NPC_ARGALOTH))
-                    SendEncounterFrame(ENCOUNTER_FRAME_ENGAGE, pArgaloth->GetObjectGuid());
-            }
+                SendEncounterFrame(uiData == IN_PROGRESS ? ENCOUNTER_FRAME_ENGAGE : ENCOUNTER_FRAME_DISENGAGE, pArgaloth->GetObjectGuid());
             break;
         case TYPE_OCCUTAR:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_OCCUTAR_DOOR);
-            if (uiData == DONE || uiData == FAIL)
-            {
-            // remove encounter frames
+
+            // add / remove encounter frames
             if (Creature* pOccutar = GetSingleCreatureFromStorage(NPC_OCCUTAR))
-                SendEncounterFrame(ENCOUNTER_FRAME_DISENGAGE, pOccutar->GetObjectGuid());
-            }
-            else if (uiData == IN_PROGRESS)
-            {
-                // add encounter frames
-                if (Creature* pOccutar = GetSingleCreatureFromStorage(NPC_OCCUTAR))
-                    SendEncounterFrame(ENCOUNTER_FRAME_ENGAGE, pOccutar->GetObjectGuid());
-            }
+                SendEncounterFrame(uiData == IN_PROGRESS ? ENCOUNTER_FRAME_ENGAGE : ENCOUNTER_FRAME_DISENGAGE, pOccutar->GetObjectGuid());
             break;
         case TYPE_ALIZABAL:
             m_auiEncounter[uiType] = uiData;
             DoUseDoorOrButton(GO_ALIZABAL_DOOR);
-            if (uiData == DONE || uiData == FAIL)
-            {
-            // remove encounter frames
+
+            // add / remove encounter frames
             if (Creature* pAlizabal = GetSingleCreatureFromStorage(NPC_ALIZABAL))
-                SendEncounterFrame(ENCOUNTER_FRAME_DISENGAGE, pAlizabal->GetObjectGuid());
-            }
-            else if (uiData == IN_PROGRESS)
-            {
-                // add encounter frames
-                if (Creature* pAlizabal = GetSingleCreatureFromStorage(NPC_ALIZABAL))
-                    SendEncounterFrame(ENCOUNTER_FRAME_ENGAGE, pAlizabal->GetObjectGuid());
-            }
+                SendEncounterFrame(uiData == IN_PROGRESS ? ENCOUNTER_FRAME_ENGAGE : ENCOUNTER_FRAME_DISENGAGE, pAlizabal->GetObjectGuid());
             break;
     }
 
