@@ -4847,7 +4847,6 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1720033,'Indeed.',25161,6,0,0,'CENARIUS SAY_OUTRO_3'),
 (-1720034,'Yes, Cenarius. We must maintain a constant vigil over this realm. For let us celebrate this day, and the great victory we have earned here.',25168,6,0,0,'HAMUUL SAY_OUTRO_1');
 
-
 -- -1 724 000 RUBY SANCTUM
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
 (-1724000,'Help! I am trapped within this tree! I require aid!',17490,6,0,0,'xerestraza SAY_HELP'),
