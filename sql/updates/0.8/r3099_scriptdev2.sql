@@ -1,4 +1,4 @@
-DELETE FROM script_texts WHERE entry BETWEEN -1720000 AND -1720034;
+DELETE FROM script_texts WHERE entry BETWEEN -1720000 AND -1720040;
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
 (-1720000,'Mortal insects! You dare trespass into MY domain? Your arrogance will be purged in living flame.',24517,6,0,0,'Ragnaros SAY_INTRO'),
 (-1720001,'Too soon! ... You have come too soon...',24519,6,0,0,'Ragnaros SAY_NORMAL_DEFEAT'),
@@ -34,4 +34,10 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1720031,'Perhaps...',25160,6,0,0,'CENARIUS SAY_OUTRO_1'),
 (-1720032,'Ragnaros has perished. But the primal powers he represents can never be vanquished. Another will rise to power, someday.',25158,6,0,0,'CENARIUS SAY_OUTRO_2'),
 (-1720033,'Indeed.',25161,6,0,0,'CENARIUS SAY_OUTRO_3'),
-(-1720034,'Yes, Cenarius. We must maintain a constant vigil over this realm. For let us celebrate this day, and the great victory we have earned here.',25168,6,0,0,'HAMUUL SAY_OUTRO_1');
+(-1720034,'Yes, Cenarius. We must maintain a constant vigil over this realm. For let us celebrate this day, and the great victory we have earned here.',25168,6,0,0,'HAMUUL SAY_OUTRO_1'),
+(-1720035,'I will see you all burn.',24534,6,0,0,'RAGNAROS SAY_AGGRO_1'),
+(-1720036,'Be consumed by flame.',24535,6,0,0,'RAGNAROS SAY_AGGRO_2'),
+(-1720037,'The realm of fire will consume you!',24536,6,0,0,'RAGNAROS SAY_AGGRO_3'),
+(-1720038,'Begone from my realm, insects.',24533,6,0,0,'HAMUUL SAY_OUTRO_1'),
+(-1720039,'BY FIRE BE PURGED!!!!',24532,6,0,0,'RAGNAROS SAY_FIRE'),
+(-1720040,'Deathwing has prepared me to face the vessel of Tarecgosa, your fools journey ends here!',25162,6,0,0,'Ragnaros SAY_HEART');
