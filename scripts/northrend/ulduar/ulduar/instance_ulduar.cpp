@@ -858,23 +858,9 @@ void instance_ulduar::SetData(uint32 uiType, uint32 uiData)
             }
             if (uiData == DONE)
             {
-                DoUpdateWorldState(WORLD_STATE_TIMER, 0);
                 DoRespawnGameObject(instance->IsRegularDifficulty() ? GO_GIFT_OF_OBSERVER_10 : GO_GIFT_OF_OBSERVER_25, 30 * MINUTE);
             }
             else if (uiData == FAIL)
-            {
-                // only despawn when time is over
-                if (GetData(TYPE_ALGALON_TIMER) == 0)
-                {
-                    DoUpdateWorldState(WORLD_STATE_TIMER, 0);
-                    if (Creature* pAlgalon = GetSingleCreatureFromStorage(NPC_ALGALON))
-                        pAlgalon->AI()->SendAIEvent(AI_EVENT_CUSTOM_A, pAlgalon, pAlgalon);
-                }
-            }
-            break;
-        case TYPE_ALGALON_TIMER:
-            m_auiEncounter[uiType] = uiData;
-            DoUpdateWorldState(WORLD_STATE_TIMER_COUNT, m_auiEncounter[uiType]);
             break;
         case TYPE_CHAMPION_FAILED:
             m_auiEncounter[uiType] = uiData;
@@ -968,7 +954,7 @@ void instance_ulduar::SetData(uint32 uiType, uint32 uiData)
             return;
     }
 
-    if (uiData == DONE || uiData == FAIL || uiData == SPECIAL || uiType == TYPE_ALGALON_TIMER)
+    if (uiData == DONE || uiData == FAIL || uiData == SPECIAL)
     {
         OUT_SAVE_INST_DATA;
 
@@ -979,7 +965,7 @@ void instance_ulduar::SetData(uint32 uiType, uint32 uiData)
                    << m_auiEncounter[6] << " " << m_auiEncounter[7] << " " << m_auiEncounter[8] << " "
                    << m_auiEncounter[9] << " " << m_auiEncounter[10] << " " << m_auiEncounter[11] << " "
                    << m_auiEncounter[12] << " " << m_auiEncounter[13] << " " << m_auiEncounter[14] << " "
-                   << m_auiEncounter[15] << " " << m_auiUlduarKeepers[0] << " " << m_auiUlduarKeepers[1] << " "
+                   << m_auiUlduarKeepers[0] << " " << m_auiUlduarKeepers[1] << " "
                    << m_auiUlduarKeepers[2] << " " << m_auiUlduarKeepers[3] << " " << m_auiUlduarTowers[0] << " "
                    << m_auiUlduarTowers[1] << " " << m_auiUlduarTowers[2] << " " << m_auiUlduarTowers[3];
 
@@ -1071,10 +1057,8 @@ uint32 instance_ulduar::GetData(uint32 uiType) const
             return m_auiEncounter[12];
         case TYPE_ALGALON:
             return m_auiEncounter[13];
-        case TYPE_ALGALON_TIMER:
-            return m_auiEncounter[14];
         case TYPE_CHAMPION_FAILED:
-            return m_auiEncounter[15];
+            return m_auiEncounter[14];
 
             // Hard modes
         case TYPE_LEVIATHAN_HARD:
@@ -1278,7 +1262,7 @@ void instance_ulduar::Load(const char* strIn)
     loadStream >> m_auiEncounter[0] >> m_auiEncounter[1] >> m_auiEncounter[2] >> m_auiEncounter[3]
                >> m_auiEncounter[4] >> m_auiEncounter[5] >> m_auiEncounter[6] >> m_auiEncounter[7]
                >> m_auiEncounter[8] >> m_auiEncounter[9] >> m_auiEncounter[10] >> m_auiEncounter[11]
-               >> m_auiEncounter[12] >> m_auiEncounter[13] >> m_auiEncounter[14] >> m_auiEncounter[15]
+               >> m_auiEncounter[12] >> m_auiEncounter[13] >> m_auiEncounter[14]
                >> m_auiUlduarKeepers[0] >> m_auiUlduarKeepers[1] >> m_auiUlduarKeepers[2] >> m_auiUlduarKeepers[3]
                >> m_auiUlduarTowers[0] >> m_auiUlduarTowers[1] >> m_auiUlduarTowers[2] >> m_auiUlduarTowers[3];
 
@@ -1555,20 +1539,6 @@ void instance_ulduar::Update(uint32 uiDiff)
         }
     }
 
-    if (GetData(TYPE_ALGALON_TIMER))
-    {
-        if (m_uiAlgalonTimer <= uiDiff)
-        {
-            --m_auiEncounter[TYPE_ALGALON_TIMER];
-            SetData(TYPE_ALGALON_TIMER, m_auiEncounter[TYPE_ALGALON_TIMER]);
-            m_uiAlgalonTimer = MINUTE * IN_MILLISECONDS;
-
-            if (m_auiEncounter[TYPE_ALGALON_TIMER] == 0)
-                SetData(TYPE_ALGALON, FAIL);
-        }
-        else
-            m_uiAlgalonTimer -= uiDiff;
-    }
 
     if (m_uiYoggResetTimer)
     {

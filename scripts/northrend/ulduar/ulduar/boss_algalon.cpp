@@ -245,13 +245,6 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
     {
         if (m_pInstance)
         {
-            // start the counter at the first aggro
-            if (m_pInstance->GetData(TYPE_ALGALON) == SPECIAL)
-            {
-                m_pInstance->DoUpdateWorldState(WORLD_STATE_TIMER, 1);
-                m_pInstance->SetData(TYPE_ALGALON_TIMER, 60);
-            }
-
             m_pInstance->SetData(TYPE_ALGALON, IN_PROGRESS);
         }
 
@@ -426,17 +419,6 @@ struct boss_algalonAI : public ScriptedAI, private DialogueHelper
         }
     }
 
-    void ReceiveAIEvent(AIEventType eventType, Creature* /*pSender*/, Unit* pInvoker, uint32 /*uiMiscValue*/) override
-    {
-        // notify boss that time is over
-        // this will trigger the wipe spell and make the boss evade and finally despawn
-        if (eventType == AI_EVENT_CUSTOM_A)
-        {
-            m_bEventFinished = true;
-            DoCastSpellIfCan(m_creature, SPELL_ASCEND_HEAVENS, CAST_INTERRUPT_PREVIOUS);
-            StartNextDialogueText(SPELL_ASCEND_HEAVENS);
-        }
-    }
 
     // function to start the intro part on first spawn
     void DoStartIntroEvent()
