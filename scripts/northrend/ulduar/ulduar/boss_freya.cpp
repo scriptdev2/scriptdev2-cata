@@ -506,7 +506,7 @@ struct boss_freyaAI : public ScriptedAI
         {
             if (m_uiEpilogueTimer <= uiDiff)
             {
-                if (DoCastSpellIfCan(m_creature, SPELL_TELEPORT, CAST_TRIGGERED) == CAST_OK)
+                if (DoCastSpellIfCan(m_creature, SPELL_TELEPORT) == CAST_OK)
                 {
                     m_creature->ForcedDespawn(2000);
                     m_uiEpilogueTimer = 0;
