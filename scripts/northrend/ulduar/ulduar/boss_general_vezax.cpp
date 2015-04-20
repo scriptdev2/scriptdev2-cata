@@ -365,8 +365,22 @@ struct npc_saronite_vaporAI : public Scripted_NoMovementAI
 
     void Reset() override { }
 
-    void JustDied(Unit* /*pKiller*/) override
+    void DamageTaken(Unit* /*pDoneBy*/, uint32& uiDamage) override
     {
+        if (uiDamage >= m_creature->GetHealth())
+        {
+            uiDamage = 0;
+            
+            m_creature->SetHealth(0);
+            m_creature->ClearComboPointHolders();
+            m_creature->CombatStop(true);
+            m_creature->ModifyAuraState(AURA_STATE_HEALTHLESS_20_PERCENT, false);
+            m_creature->ModifyAuraState(AURA_STATE_HEALTHLESS_35_PERCENT, false);
+            m_creature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
+            m_creature->ClearAllReactives();
+            m_creature->GetMotionMaster()->Clear();
+            m_creature->GetMotionMaster()->MoveIdle();
+            
         // inform Vezax of death
         if (m_pInstance)
         {
@@ -374,7 +388,7 @@ struct npc_saronite_vaporAI : public Scripted_NoMovementAI
                 SendAIEvent(AI_EVENT_CUSTOM_A, m_creature, pVezax);
         }
 
-        DoCastSpellIfCan(m_creature, SPELL_SARONITE_VAPORS, CAST_TRIGGERED);
+        DoCastSpellIfCan(m_creature, SPELL_SARONITE_VAPORS);
     }
 
     void MovementInform(uint32 uiType, uint32 uiPointId) override
