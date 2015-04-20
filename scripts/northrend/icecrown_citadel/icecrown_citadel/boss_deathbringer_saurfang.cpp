@@ -119,7 +119,6 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
     {
         m_pInstance = (instance_icecrown_citadel*)pCreature->GetInstanceData();
         m_powerBloodPower = m_creature->GetPowerType();
-        m_bIsIntroDone = false;
         Reset();
     }
 
@@ -133,7 +132,6 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
     uint32 m_uiBerserkTimer;
 
     bool m_bIsFrenzied;
-    bool m_bIsIntroDone;
 
     Powers m_powerBloodPower;
 
@@ -163,18 +161,7 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
             m_pInstance->SetData(TYPE_DEATHBRINGER_SAURFANG, IN_PROGRESS);
     }
 
-    void MoveInLineOfSight(Unit* pWho) override
-    {
-        if (!m_bIsIntroDone && pWho->GetTypeId() == TYPEID_PLAYER && !((Player*)pWho)->isGameMaster() && m_creature->GetDistance2d(pWho) < 50.0f)
-        {
-            m_creature->GetMotionMaster()->MovePoint(POINT_ID_INTRO, fIntroPosition[0], fIntroPosition[1], fIntroPosition[2]);
-            if (m_pInstance)
-                m_pInstance->DoUseDoorOrButton(GO_SAURFANG_DOOR);
-            m_bIsIntroDone = true;
-        }
-
-        ScriptedAI::MoveInLineOfSight(pWho);
-    }
+    void MoveInLineOfSight() override { }
 
     void KilledUnit(Unit* pVictim) override
     {
@@ -236,8 +223,6 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
             // ToDo: move this to the proper place after the intro will be implemented
             // Also the faction needs to be checked if it should be handled in database
             m_creature->setFaction(FACTION_ID_UNDEAD);
-            m_creature->RemoveFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE | UNIT_FLAG_PASSIVE);
-            m_creature->SetInCombatWithZone();
         }
     }
 
@@ -280,7 +265,7 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
 
         // Mark of the Fallen Champion
         // ToDo: enable this when blood power is fully supported by the core
-        /*if (m_creature->GetPower(m_powerBloodPower) >= 100)
+        if (m_creature->GetPower(m_powerBloodPower) >= 100)
         {
             if (Unit* pTarget = SelectRandomPlayerForMark())
             {
@@ -290,7 +275,7 @@ struct boss_deathbringer_saurfangAI : public ScriptedAI
                     m_creature->SetPower(m_powerBloodPower, 0);
                 }
             }
-        }*/
+        }
 
         // Frenzy (soft enrage)
         if (!m_bIsFrenzied)
