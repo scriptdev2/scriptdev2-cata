@@ -253,6 +253,7 @@ struct boss_brutallusAI : public ScriptedAI, private DialogueHelper
             pTarget->RemoveAllAurasOnDeath();
             pTarget->ModifyAuraState(AURA_STATE_HEALTHLESS_20_PERCENT, false);
             pTarget->ModifyAuraState(AURA_STATE_HEALTHLESS_35_PERCENT, false);
+            pTarget->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_PASSIVE);
             pTarget->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_NOT_SELECTABLE);
             pTarget->ClearAllReactives();
             pTarget->GetMotionMaster()->Clear();
