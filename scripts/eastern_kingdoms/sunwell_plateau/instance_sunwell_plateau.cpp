@@ -172,7 +172,7 @@ void instance_sunwell_plateau::OnCreatureEnterCombat(Creature* pCreature)
            return;
        
        if (Creature* pCommander = GetSingleCreatureFromStorage(NPC_SHADOWSWORD_COMMANDER))
-           DoScriptText(SAY_CRUSHER_AGGRO, pCommander);
+           DoScriptText(SAY_GAUNTLET_START, pCommander);
        
        if (Creature* pGauntlet = pCreature->SummonCreature(NPC_GAUNTLET_IMP, 1697.92f, 502.315f, 86.4882f, 1.65806f, TEMPSUMMON_DEAD_DESPAWN, 0));
            m_bSunwellGauntletStarted = true;
