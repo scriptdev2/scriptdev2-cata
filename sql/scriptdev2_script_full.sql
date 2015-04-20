@@ -3387,7 +3387,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1580106,'Farewell...!',12523,0,0,1,'velen SAY_OUTRO_12'),
 
 (-1580107,'%s takes a deep breath.',0,3,0,0,'felmyst EMOTE_DEEP_BREATH');
-
+(-1580108,'Bring forth the imps!',0,1,0,0,'Shadowsword Commander SAY_GAUNTLET_START');
 -- -1 585 000 MAGISTER'S TERRACE
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
 (-1585000,'You only waste my time!',12378,1,0,0,'selin SAY_AGGRO'),

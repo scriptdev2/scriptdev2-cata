@@ -42,6 +42,10 @@ enum
     NPC_KALECGOS                = 25319,            // related to kiljaeden event
     NPC_VELEN                   = 26246,
     NPC_LIADRIN                 = 26247,
+    NPC_SHADOWSWORD_MANAFIEND   = 25483,            // Npc trigger start gauntlet event.
+    NPC_GAUNTLET_IMP            = 25848,            // Npc Gauntlet Imp after Felmyst.
+    NPC_SHADOWSWORD_COMMANDER   = 25837,
+    
 
     GO_FORCEFIELD               = 188421,           // kalecgos door + collisions
     GO_BOSS_COLLISION_1         = 188523,
@@ -68,6 +72,8 @@ enum
     SAY_ORDER_3                 = -1580066,
     SAY_ORDER_4                 = -1580067,
     SAY_ORDER_5                 = -1580068,
+    
+    SAY_GAUNTLET_START          = -1580108,
 
     AREATRIGGER_TWINS           = 4937,
 
@@ -156,5 +162,7 @@ class instance_sunwell_plateau : public ScriptedInstance, private DialogueHelper
         GuidList m_lBackdoorTriggersList;
         GuidList m_lDeceiversGuidList;
         GuidList m_lMuruTrashGuidList;
+        
+        bool m_bSunwellGauntletStarted;
 };
 #endif

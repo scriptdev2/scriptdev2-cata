@@ -49,6 +49,7 @@ instance_sunwell_plateau::instance_sunwell_plateau(Map* pMap) : ScriptedInstance
     m_uiKalecRespawnTimer(0),
     m_uiMuruBerserkTimer(0),
     m_uiKiljaedenYellTimer(90000)
+    m_bSunwellGauntletStarted(false);
 {
     Initialize();
 }
@@ -160,6 +161,23 @@ void instance_sunwell_plateau::OnCreatureEvade(Creature* pCreature)
         SetData(TYPE_KILJAEDEN, FAIL);
 }
 
+void instance_sunwell_plateau::OnCreatureEnterCombat(Creature* pCreature)
+{
+   uint32 uiEntry = pCreature->GetEntry();
+   
+   if (uiEntry == NPC_SHADOWSWORD_MANAFIEND)
+   {
+       // Only for the first try
+       if (m_bSunwellGauntletStarted)
+           return;
+       
+       if (Creature* pCommander = GetSingleCreatureFromStorage(NPC_SHADOWSWORD_COMMANDER))
+           DoScriptText(SAY_CRUSHER_AGGRO, pCommander);
+       
+       if (Creature* pGauntlet = pCreature->SummonCreature(NPC_GAUNTLET_IMP, 1697.92f, 502.315f, 86.4882f, 1.65806f, TEMPSUMMON_DEAD_DESPAWN, 0));
+           m_bSunwellGauntletStarted = true;
+    }
+}
 void instance_sunwell_plateau::OnObjectCreate(GameObject* pGo)
 {
     switch (pGo->GetEntry())
