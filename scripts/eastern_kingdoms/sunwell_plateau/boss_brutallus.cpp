@@ -221,6 +221,7 @@ struct boss_brutallusAI : public ScriptedAI, private DialogueHelper
         if (pSummoned->GetEntry() == NPC_MADRIGOSA)
         {
             pSummoned->SetWalk(false);
+            pSummoned->SetByteValue(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
             pSummoned->SetLevitate(true);
             pSummoned->GetMotionMaster()->MovePoint(0, aMadrigosaLoc[1].m_fX, aMadrigosaLoc[1].m_fY, aMadrigosaLoc[1].m_fZ, false);
         }
@@ -234,6 +235,7 @@ struct boss_brutallusAI : public ScriptedAI, private DialogueHelper
             return;
 
         if (uiPointId == POINT_MOVE_GROUND)
+            pSummoned->RemoveByteFlag(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
             pSummoned->SetLevitate(false);
     }
 
@@ -243,6 +245,7 @@ struct boss_brutallusAI : public ScriptedAI, private DialogueHelper
         if (pTarget->GetEntry() == NPC_MADRIGOSA && pSpell->Id == SPELL_CHARGE)
         {
             DoScriptText(YELL_MADR_DEATH, pTarget);
+            pTarget->CombatStop(true);
             pTarget->InterruptNonMeleeSpells(true);
             pTarget->SetHealth(0);
             pTarget->StopMoving();
@@ -298,6 +301,7 @@ struct boss_brutallusAI : public ScriptedAI, private DialogueHelper
                 {
                     pMadrigosa->GetMotionMaster()->MovePoint(POINT_MOVE_ICE_BLOCK, aMadrigosaLoc[1].m_fX, aMadrigosaLoc[1].m_fY, aMadrigosaLoc[1].m_fZ);
                     pMadrigosa->HandleEmote(EMOTE_ONESHOT_LIFTOFF);
+                    pMadrigosa->SetByteValue(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
                     pMadrigosa->SetLevitate(true);
                 }
                 // Temporary! This will make Brutallus not follow Madrigosa through the air until mmaps are implemented
