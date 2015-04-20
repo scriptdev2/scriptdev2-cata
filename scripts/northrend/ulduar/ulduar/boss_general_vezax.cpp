@@ -380,6 +380,7 @@ struct npc_saronite_vaporAI : public Scripted_NoMovementAI
             m_creature->ClearAllReactives();
             m_creature->GetMotionMaster()->Clear();
             m_creature->GetMotionMaster()->MoveIdle();
+            m_creature->SetStandState(UNIT_STAND_STATE_DEAD);
             
         // inform Vezax of death
         if (m_pInstance)
