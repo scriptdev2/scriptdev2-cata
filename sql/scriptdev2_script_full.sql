@@ -4987,6 +4987,36 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1724037,'Your companions\' efforts force Halion further into the physical realm!',0,3,0,0,'halion EMOTE_INTO_PHYSICAL'),
 (-1724038,'Without pressure in both realms %s begins to regenerate.',0,3,0,0,'halion EMOTE_REGENERATE');
 
+-- -1 754 000 THRONE OF THE FOUR WINDS
+INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
+(-1754000,'It shall be I that earns the favor of our lord by casting out the intruders. My calmest wind shall prove too much for them!',0,6,0,0,'Anshal SAY_AGGRO'),
+(-1754001,'Begone, outsiders!',0,6,0,0,'Anshal SAY_SLAY_1'),
+(-1754002,'Your presence shall no longer defile our home!',0,6,0,0,'Anshal SAY_SLAY_1'),
+(-1754003,'The power of our winds, UNLEASHED!',0,6,0,0,'Anshal SAY_FULL_ENERGY'),
+(-1754004,'My power grows feeble, brothers. I shamefully must rely on you for a time.',0,6,0,0,'Anshal SAY_LOW_HP'),
+(-1754005,'You think to outrun the wind? A fatal mistake.',0,6,0,0,'Anshal SAY_OUT_OF_ENEMY'),
+(-1754006,'The honor of slaying the interlopers shall be mine, brothers! Their feeble bodies will freeze solid from my wind's icy chill!',0,6,0,0,'Nezir SAY_AGGRO'),
+(-1754007,'Another mortal has taken their last breath!',0,6,0,0,'Nezir SAY_SLAY_1'),
+(-1754008,'Frozen solid.',0,6,0,0,'Nezir SAY_SLAY_2'),
+(-1754009,'The power of our winds, UNLEASHED!',0,6,0,0,'Nezir SAY_FULL_ENERGY'),
+(-1754010,'The intruders stand fast, brothers. I cannot break them. Allow me a brief respite to strengthen my winds.',0,6,0,0,'Nezir SAY_LOW_HP'),
+(-1754011,'Fall to your knees, mortals! This ends now!',0,6,0,0,'Nezir SAY_OUT_OF_ENEMY'),
+(-1754012,'As I am the strongest wind, it shall be I that tears the invaders apart!',0,6,0,0,'Rohash SAY_AGGRO'),
+(-1754013,'Blown away!',0,6,0,0,'Rohash SAY_SLAY_1'),
+(-1754014,'Mere dust...',0,6,0,0,'Rohash SAY_SLAY_2'),
+(-1754015,'The power of our winds, UNLEASHED!',0,6,0,0,'Rohash SAY_FULL_ENERGY'),
+(-1754016,'The intruders stand fast, brothers, I cannot break them. Allow me a brief respite to strengthen my winds.',0,6,0,0,'Rohash SAY_LOW_HP'),
+(-1754017,'Why do you flee, mortals? There is nowhere you can run or hide here!',0,6,0,0,'Rohash SAY_OUT_OF_ENEMY'),
+(-1754018,'The Conclave of Wind has dissipated. Your honorable conduct and determination have earned you the right to face me in battle, mortals. I await your assault on my platform! Come!',0,6,0,0,'Al'Akir SAY_CONCLAVE_DEFEATED'),
+(-1754019,'Your challenge is accepted, mortals! Know that you face Al'Akir, Elemental Lord of Air! You have no hope of defeating me!',0,6,0,0,'Al'Akir SAY_AGGRO'),
+(-1754020,'Winds! Obey my command!',0,6,0,0,'Al'Akir SAY_WIND_BURST'),
+(-1754021,'Your futile persistence angers me',0,6,0,0,'Al'Akir SAY_PHASE_TWO'),
+(-1754022,'Storms! I summon you to my side!',0,6,0,0,'Al'Akir SAY_SUMMON_SQUALL'),
+(-1754023,'ENOUGH! I WILL NO LONGER BE CONTAINED!',0,6,0,0,'Al'Akir SAY_PHASE_THREE'),
+(-1754024,'After every storm... comes the calm...',0,6,0,0,'Al'Akir SAY_DEFEATED'),
+(-1754025,'Like swatting insects...',0,6,0,0,'Al'Akir SAY_SLAY_1'),
+(-1754026,'This little one will vex me no longer.',0,6,0,0,'Al'Akir SAY_SLAY_2');
+
 -- -1 999 900 EXAMPLE TEXT
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
 (-1999900,'Let the games begin.',8280,1,0,0,'example_creature SAY_AGGRO'),
