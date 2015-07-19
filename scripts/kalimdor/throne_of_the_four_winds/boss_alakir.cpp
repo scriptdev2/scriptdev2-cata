@@ -23,6 +23,19 @@ EndScriptData */
 
 #include "precompiled.h"
 
+enum
+{
+    SAY_CONCLAVE_DEFEATED               = -1754018,
+    SAY_AGGRO                           = -1754019,
+    SAY_WIND_BURST                      = -1754020,
+    SAY_PHASE_TWO                       = -1754021,
+    SAY_SUMMON_SQUALL                   = -1754022,
+    SAY_PHASE_THREE                     = -1754023,
+    SAY_DEFEATED                        = -1754024,
+    SAY_SLAY_1                          = -1754025,
+    SAY_SLAY_2                          = -1754026,
+};
+
 void AddSC_boss_alakir()
 {
 }

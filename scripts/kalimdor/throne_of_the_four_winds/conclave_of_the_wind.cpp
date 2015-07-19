@@ -23,6 +23,33 @@ EndScriptData */
 
 #include "precompiled.h"
 
+enum
+{
+    // Anshal
+    SAY_ANSHAL_AGGRO                = -1754000,
+    SAY_ANSHAL_SLAY_1               = -1754001,
+    SAY_ANSHAL_SLAY_2               = -1754002,
+    SAY_ANSHAL_FULL_ENERGY          = -1754003,
+    SAY_ANSHAL_LOW_HP               = -1754004,
+    SAY_ANSHAL_OUT_OF_ENEMY         = -1754005,
+
+    // Nezir
+    SAY_NEZIR_AGGRO                 = -1754006,
+    SAY_NEZIR_SLAY_1                = -1754007,
+    SAY_NEZIR_SLAY_2                = -1754008,
+    SAY_NEZIR_FULL_ENERGY           = -1754009,
+    SAY_NEZIR_LOW_HP                = -1754010,
+    SAY_NEZIR_OUT_OF_ENEMY          = -1754011,
+
+    // Rohash
+    SAY_ROHASH_AGGRO                = -1754012,
+    SAY_ROHASH_SLAY_1               = -1754013,
+    SAY_ROHASH_SLAY_2               = -1754014,
+    SAY_ROHASH_FULL_ENERGY          = -1754015,
+    SAY_ROHASH_LOW_HP               = -1754016,
+    SAY_ROHASH_OUT_OF_ENEMY         = -1754017,
+};
+
 void AddSC_conclave_of_the_wind()
 {
 }
