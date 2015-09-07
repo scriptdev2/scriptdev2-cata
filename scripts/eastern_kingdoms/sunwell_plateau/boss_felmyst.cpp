@@ -168,6 +168,7 @@ struct boss_felmystAI : public ScriptedAI
         if (m_creature->isAlive())
         {
             float fX, fY, fZ;
+            m_creature->SetByteValue(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
             m_creature->SetLevitate(true);
             m_creature->GetRespawnCoord(fX, fY, fZ);
             m_creature->GetMotionMaster()->MovePoint(PHASE_GROUND, fX, fY, 50.083f, false);
@@ -281,6 +282,7 @@ struct boss_felmystAI : public ScriptedAI
                 // switch back to ground combat from flight transition
                 m_uiPhase = PHASE_GROUND;
                 SetCombatMovement(true);
+                m_creature->RemoveByteFlag(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
                 m_creature->SetLevitate(false);
                 DoStartMovement(m_creature->getVictim());
                 break;
@@ -371,6 +373,7 @@ struct boss_felmystAI : public ScriptedAI
                     DoScriptText(SAY_TAKEOFF, m_creature);
 
                     SetCombatMovement(false);
+                    m_creature->SetByteValue(UNIT_FIELD_BYTES_1, 3, UNIT_BYTE1_FLAG_FLY_ANIM);
                     m_creature->SetLevitate(true);
                     m_creature->GetMotionMaster()->MoveIdle();
                     m_creature->GetMotionMaster()->MovePoint(PHASE_AIR, m_creature->GetPositionX(), m_creature->GetPositionY(), 50.083f, false);
