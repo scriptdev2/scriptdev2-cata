@@ -159,6 +159,7 @@ struct boss_kologarnAI : public Scripted_NoMovementAI
         DoScriptText(SAY_DEATH, m_creature);
         DoCastSpellIfCan(m_creature, SPELL_INSTAKILL_KOLOGARN_ARM, CAST_TRIGGERED);
         DoCastSpellIfCan(m_creature, SPELL_INSTAKILL_KOLOGARN_ARM, CAST_TRIGGERED);
+        m_creature->SetCorpseDelay(7 * DAY * IN_MILLISECONDS);
     }
 
     void KilledUnit(Unit* pVictim) override

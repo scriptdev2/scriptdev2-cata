@@ -7,7 +7,7 @@
 
 enum
 {
-    MAX_ENCOUNTER               = 16,
+    MAX_ENCOUNTER               = 15,
     HARD_MODE_ENCOUNTER         = 8,
     KEEPER_ENCOUNTER            = 4,
 
@@ -26,36 +26,35 @@ enum
     TYPE_VEZAX                  = 11,
     TYPE_YOGGSARON              = 12,
     TYPE_ALGALON                = 13,
-    TYPE_ALGALON_TIMER          = 14,
-    TYPE_CHAMPION_FAILED        = 15,                       // Achievements Champion / Conquerer of Ulduar, needs to be saved to database
+    TYPE_CHAMPION_FAILED        = 14,                       // Achievements Champion / Conquerer of Ulduar, needs to be saved to database
 
     // Hard mode boss types
     // Used for hard mode bosses only
-    TYPE_LEVIATHAN_HARD         = 16,
-    TYPE_XT002_HARD             = 17,
-    TYPE_MIMIRON_HARD           = 18,
-    TYPE_HODIR_HARD             = 19,
-    TYPE_THORIM_HARD            = 20,
-    TYPE_FREYA_HARD             = 21,
-    TYPE_VEZAX_HARD             = 22,
-    TYPE_YOGGSARON_HARD         = 23,
+    TYPE_LEVIATHAN_HARD         = 15,
+    TYPE_XT002_HARD             = 16,
+    TYPE_MIMIRON_HARD           = 17,
+    TYPE_HODIR_HARD             = 18,
+    TYPE_THORIM_HARD            = 19,
+    TYPE_FREYA_HARD             = 20,
+    TYPE_VEZAX_HARD             = 21,
+    TYPE_YOGGSARON_HARD         = 22,
 
     // Keeper types
     // Used to store the keepers which will be used at yogg
-    TYPE_KEEPER_HODIR           = 24,
-    TYPE_KEEPER_FREYA           = 25,
-    TYPE_KEEPER_THORIM          = 26,
-    TYPE_KEEPER_MIMIRON         = 27,
+    TYPE_KEEPER_HODIR           = 23,
+    TYPE_KEEPER_FREYA           = 24,
+    TYPE_KEEPER_THORIM          = 25,
+    TYPE_KEEPER_MIMIRON         = 26,
 
     // Tower types
     // Used to store the towers which will be used at Leviathan encounter
-    TYPE_TOWER_HODIR            = 28,
-    TYPE_TOWER_FREYA            = 29,
-    TYPE_TOWER_THORIM           = 30,
-    TYPE_TOWER_MIMIRON          = 31,
+    TYPE_TOWER_HODIR            = 27,
+    TYPE_TOWER_FREYA            = 28,
+    TYPE_TOWER_THORIM           = 29,
+    TYPE_TOWER_MIMIRON          = 30,
 
     // Other types - not saved
-    TYPE_LEVIATHAN_GAUNTLET     = 32,
+    TYPE_LEVIATHAN_GAUNTLET     = 31,
 
     // The siege of ulduar
     NPC_LEVIATHAN               = 33113,
@@ -604,7 +603,7 @@ class instance_ulduar : public ScriptedInstance, private DialogueHelper
 
         bool m_bHelpersLoaded;
 
-        uint32 m_uiAlgalonTimer;
+
         uint32 m_uiYoggResetTimer;
         uint32 m_uiShatterAchievTimer;
         uint32 m_uiGauntletStatus;
