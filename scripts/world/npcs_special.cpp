@@ -30,6 +30,7 @@ EndScriptData
 
 /* ContentData
 npc_air_force_bots       80%    support for misc (invisible) guard bots in areas where player allowed to fly. Summon guards after a preset time if tagged by spell
+npc_training_dummy      100%    Used for training dummy
 npc_chicken_cluck       100%    support for quest 3861 (Cluck!)
 npc_dancing_flames      100%    midsummer event NPC
 npc_guardian            100%    guardianAI used to prevent players from accessing off-limits areas. Not in use by SD2
@@ -242,6 +243,46 @@ struct npc_air_force_botsAI : public ScriptedAI
 CreatureAI* GetAI_npc_air_force_bots(Creature* pCreature)
 {
     return new npc_air_force_botsAI(pCreature);
+}
+
+/*########
+# npc_training_dummy
+#########*/
+
+#define OUT_OF_COMBAT_TIME 5000
+
+struct MANGOS_DLL_DECL npc_training_dummy : public Scripted_NoMovementAI
+{
+    npc_training_dummy(Creature* pCreature) : Scripted_NoMovementAI(pCreature) {Reset();}
+
+    uint32 combat_timer;
+
+    void Reset()
+    {
+        combat_timer = 0;
+    }
+
+    void DamageTaken(Unit* pDoneBy, uint32 &uiDamage)
+    {
+        combat_timer = 0;
+    }
+
+    void UpdateAI(const uint32 uiDiff)
+    {
+        if (!m_creature->SelectHostileTarget() || !m_creature->getVictim())
+            return;
+
+        m_creature->SetHealth(m_creature->GetMaxHealth());
+
+        combat_timer += uiDiff;
+        if (combat_timer > OUT_OF_COMBAT_TIME)
+            EnterEvadeMode();
+    }
+};
+
+CreatureAI* GetAI_npc_training_dummy(Creature* pCreature)
+{
+    return new npc_training_dummy(pCreature);
 }
 
 /*########
@@ -1364,6 +1405,11 @@ void AddSC_npcs_special()
     pNewScript = new Script;
     pNewScript->Name = "npc_air_force_bots";
     pNewScript->GetAI = &GetAI_npc_air_force_bots;
+    pNewScript->RegisterSelf();
+
+    pNewScript = new Script;
+    pNewScript->Name = "npc_training_dummy";
+    pNewScript->GetAI = &GetAI_npc_training_dummy;
     pNewScript->RegisterSelf();
 
     pNewScript = new Script;
