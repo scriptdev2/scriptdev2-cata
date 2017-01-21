@@ -162,6 +162,13 @@ void instance_icecrown_citadel::OnCreatureCreate(Creature* pCreature)
         case NPC_DEATHWHISPER_SPAWN_STALKER:
             m_lDeathwhisperStalkersGuids.push_back(pCreature->GetObjectGuid());
             return;
+        case NPC_DARKFALLEN_ADVISOR:
+        case NPC_DARKFALLEN_BLOOD_KNIGHT:
+        case NPC_DARKFALLEN_NOBLE:
+        case NPC_DARKFALLEN_ARCHMAGE:
+         if (pCreature->GetPositionZ() < 361.0f)
+             m_lCrimsonHallNpcGuidSet.push_back(pCreature->GetObjectGuid());
+             return;
     }
 }
 
@@ -290,6 +297,21 @@ void instance_icecrown_citadel::OnCreatureDeath(Creature* pCreature)
                     DoScriptText(SAY_PRECIOUS_DIES, pRotface);
             }
             break;
+        case NPC_DARKFALLEN_ADVISOR:
+        case NPC_DARKFALLEN_BLOOD_KNIGHT:
+        case NPC_DARKFALLEN_NOBLE:
+        case NPC_DARKFALLEN_ARCHMAGE:
+        {
+            if (m_sCrimsonHallNpcGuidSet.find(pCreature->GetObjectGuid()) != m_sCrimsonHallNpcGuidSet.end())
+                m_sCrimsonHallNpcGuidSet.erase(pCreature->GetObjectGuid());
+
+            // start pre Leviathan event
+            if (m_sCrimsonHallNpcGuidSet.empty())
+            {
+                DoUseDoorOrButton(GO_CRIMSON_HALL_DOOR);
+            }
+            break;
+        }
     }
 }
 
