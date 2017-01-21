@@ -273,6 +273,11 @@ struct boss_thorimAI : public ScriptedAI, private DialogueHelper
 
     void Aggro(Unit* /*pWho*/) override
     {
+	    // don't attack again after being defeated
+        if (m_bEventFinished)
+            return;
+			
+			
         if (m_pInstance)
         {
             m_pInstance->SetData(TYPE_THORIM, IN_PROGRESS);
